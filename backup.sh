@@ -1,7 +1,14 @@
 #!/bin/sh
+## backup.sh for  in /home/baptiste/secu/Backup_sql_freebsd
+## 
+## Made by 
+## Login   <baptiste.heraud@epitech.eu>
+## 
+## Started on  Sat Apr 30 12:09:26 2016 
+## Last update Sat Apr 30 12:10:28 2016 
+##
 
-#Script sauvegarde
-
+#Script sauvegarde avec rotation de log (WORK with freebsd 9)
 MyUSER="metin2"
 MyPASS="epv4minq"
 MyHOST="localhost"
