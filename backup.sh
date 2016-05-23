@@ -1,14 +1,7 @@
 #!/bin/sh
-## backup.sh for  in /home/baptiste/secu/Backup_sql_freebsd
-## 
-## Made by 
-## Login   <baptiste.heraud@epitech.eu>
-## 
-## Started on  Sat Apr 30 12:09:26 2016 
-## Last update Sat Apr 30 12:10:28 2016 
-##
 
-#Script sauvegarde avec rotation de log (WORK with freebsd 9)
+#Script sauvegarde
+
 MyUSER="metin2"
 MyPASS="epv4minq"
 MyHOST="localhost"
@@ -23,13 +16,14 @@ DF="/bin/df"
 
 $MYSQLDUMP -u $MyUSER -h $MyHOST -p$MyPASS account | $GZIP > /var/tmp/mysql_backups/account.gz
 $MYSQLDUMP -u $MyUSER -h $MyHOST -p$MyPASS common | $GZIP > /var/tmp/mysql_backups/common.gz
-$MYSQLDUMP -u $MyUSER -h $MyHOST -p$MyPASS common2 | $GZIP > /var/tmp/mysql_backups/common2.gz
 $MYSQLDUMP -u $MyUSER -h $MyHOST -p$MyPASS player | $GZIP > /var/tmp/mysql_backups/player.gz
-$MYSQLDUMP -u $MyUSER -h $MyHOST -p$MyPASS yurima | $GZIP > /var/tmp/mysql_backups/yurima.gz
 
-
-sleep 5 
+sleep 3 
+#cd /home/
+#tar czvf file.tar.gz metin2
+#mv file.tar.gz /var/tmp/mysql_backups/
 cd /home/sauvegarde/
+sleep 2
 find . -type f -name 'savemysql*.tar.bz' | sed -e 's/^.*[^0-9]\([0-9]*\).tar.bz/\1/g'| sort -rn | while read A
 do
  B=$(expr $A + 1)
