@@ -19,9 +19,9 @@ $MYSQLDUMP -u $MyUSER -h $MyHOST -p$MyPASS common | $GZIP > /var/tmp/mysql_backu
 $MYSQLDUMP -u $MyUSER -h $MyHOST -p$MyPASS player | $GZIP > /var/tmp/mysql_backups/player.gz
 
 sleep 3 
-#cd /home/
-#tar czvf file.tar.gz metin2
-#mv file.tar.gz /var/tmp/mysql_backups/
+cd /home/
+tar czvf file.tar.gz metin2
+mv file.tar.gz /var/tmp/mysql_backups/
 cd /home/sauvegarde/
 sleep 2
 find . -type f -name 'savemysql*.tar.bz' | sed -e 's/^.*[^0-9]\([0-9]*\).tar.bz/\1/g'| sort -rn | while read A
