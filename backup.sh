@@ -27,7 +27,5 @@ tar cvjf savemysql1.tar.bz /var/tmp/mysql_backups/
 sleep 5
 cd /var/tmp/mysql_backups/
 rm *.gz
-#cd /usr/backup/
-#rm -r *
 cd /home/sauvegarde
 echo "`date -u` [+] OK [Taille] `du -hs`" >> log.txt
